@@ -1,0 +1,178 @@
+D:\WebAPI\APIBaiTap\APIBaitap\bin\APIBaitap.dll.config
+D:\WebAPI\APIBaiTap\APIBaitap\bin\APIBaitap.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\APIBaitap.pdb
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\csc.exe
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\csc.exe.config
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\csc.rsp
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\csi.exe
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\csi.exe.config
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\csi.rsp
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\Microsoft.Managed.Core.targets
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\System.AppContext.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\System.Collections.Immutable.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\System.Console.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\System.Globalization.Calendars.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\System.IO.Compression.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\System.IO.FileSystem.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\System.Net.Http.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\System.Net.Sockets.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\System.Reflection.Metadata.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\System.ValueTuple.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\System.Xml.XmlDocument.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\System.Xml.XPath.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\vbc.exe
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\vbc.exe.config
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\vbc.rsp
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\VBCSCompiler.exe
+D:\WebAPI\APIBaiTap\APIBaitap\bin\roslyn\VBCSCompiler.exe.config
+D:\WebAPI\APIBaiTap\APIBaitap\bin\Antlr3.Runtime.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\EntityFramework.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\EntityFramework.SqlServer.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\Microsoft.Web.Infrastructure.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\Newtonsoft.Json.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\System.Net.Http.Formatting.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\System.Web.Helpers.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\System.Web.Http.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\System.Web.Http.WebHost.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\System.Web.Mvc.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\System.Web.Optimization.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\System.Web.Razor.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\System.Web.WebPages.Deployment.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\System.Web.WebPages.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\System.Web.WebPages.Razor.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\WebGrease.dll
+D:\WebAPI\APIBaiTap\APIBaitap\bin\EntityFramework.xml
+D:\WebAPI\APIBaiTap\APIBaitap\bin\EntityFramework.SqlServer.xml
+D:\WebAPI\APIBaiTap\APIBaitap\bin\Newtonsoft.Json.xml
+D:\WebAPI\APIBaiTap\APIBaitap\bin\System.Net.Http.Formatting.xml
+D:\WebAPI\APIBaiTap\APIBaitap\bin\System.Web.Helpers.xml
+D:\WebAPI\APIBaiTap\APIBaitap\bin\System.Web.Http.xml
+D:\WebAPI\APIBaiTap\APIBaitap\bin\System.Web.Http.WebHost.xml
+D:\WebAPI\APIBaiTap\APIBaitap\bin\System.Web.Mvc.xml
+D:\WebAPI\APIBaiTap\APIBaitap\bin\System.Web.Optimization.xml
+D:\WebAPI\APIBaiTap\APIBaitap\bin\System.Web.Razor.xml
+D:\WebAPI\APIBaiTap\APIBaitap\bin\System.Web.WebPages.xml
+D:\WebAPI\APIBaiTap\APIBaitap\bin\System.Web.WebPages.Deployment.xml
+D:\WebAPI\APIBaiTap\APIBaitap\bin\System.Web.WebPages.Razor.xml
+D:\WebAPI\APIBaiTap\APIBaitap\bin\Antlr3.Runtime.pdb
+D:\WebAPI\APIBaiTap\APIBaitap\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\WebAPI\APIBaiTap\APIBaitap\obj\Debug\APIBaitap.csproj.CoreCompileInputs.cache
+D:\WebAPI\APIBaiTap\APIBaitap\obj\Debug\APIBaitap.csproj.CopyComplete
+D:\WebAPI\APIBaiTap\APIBaitap\obj\Debug\APIBaitap.dll
+D:\WebAPI\APIBaiTap\APIBaitap\obj\Debug\APIBaitap.pdb
+D:\WebAPI\APIBaiTap\APIBaitap\obj\Debug\APIBaitap.csprojAssemblyReference.cache
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\APIBaitap.dll.config
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\APIBaitap.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\APIBaitap.pdb
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\csc.exe
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\csc.exe.config
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\csc.rsp
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\csi.exe
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\csi.exe.config
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\csi.rsp
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\System.AppContext.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\System.Collections.Immutable.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\System.Console.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\System.Globalization.Calendars.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\System.IO.Compression.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\System.IO.FileSystem.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\System.Net.Http.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\System.Net.Sockets.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\System.Reflection.Metadata.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\System.ValueTuple.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\System.Xml.XPath.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\vbc.exe
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\vbc.exe.config
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\vbc.rsp
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\VBCSCompiler.exe
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\roslyn\VBCSCompiler.exe.config
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\Antlr3.Runtime.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\EntityFramework.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\EntityFramework.SqlServer.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\Microsoft.Web.Infrastructure.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\Newtonsoft.Json.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\System.Net.Http.Formatting.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\System.Web.Helpers.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\System.Web.Http.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\System.Web.Http.WebHost.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\System.Web.Mvc.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\System.Web.Optimization.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\System.Web.Razor.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\System.Web.WebPages.Deployment.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\System.Web.WebPages.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\System.Web.WebPages.Razor.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\WebGrease.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\EntityFramework.xml
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\EntityFramework.SqlServer.xml
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\Newtonsoft.Json.xml
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\System.Net.Http.Formatting.xml
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\System.Web.Helpers.xml
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\System.Web.Http.xml
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\System.Web.Http.WebHost.xml
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\System.Web.Mvc.xml
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\System.Web.Optimization.xml
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\System.Web.Razor.xml
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\System.Web.WebPages.xml
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\System.Web.WebPages.Deployment.xml
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\System.Web.WebPages.Razor.xml
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\Antlr3.Runtime.pdb
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\obj\Debug\APIBaitap.csprojAssemblyReference.cache
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\obj\Debug\APIBaitap.csproj.CoreCompileInputs.cache
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\obj\Debug\APIBaitap.csproj.CopyComplete
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\obj\Debug\APIBaitap.dll
+D:\Đại Học\Năm 3\BTL_hung\APIBaitap\APIBaitap\obj\Debug\APIBaitap.pdb

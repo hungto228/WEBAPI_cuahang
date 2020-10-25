@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CuaHangModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Chitietdonhang">
+    <Key>
+      <PropertyRef Name="mact" />
+    </Key>
+    <Property Name="mact" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="madonhang" Type="int" />
+    <Property Name="Id" Type="int" />
+    <Property Name="tensp" Type="nvarchar" MaxLength="1000" />
+    <Property Name="soluong" Type="int" />
+    <Property Name="thanhtien" Type="int" />
+  </EntityType>
+  <EntityType Name="donhang">
+    <Key>
+      <PropertyRef Name="madonhang" />
+    </Key>
+    <Property Name="madonhang" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="matv" Type="int" />
+    <Property Name="tentv" Type="nvarchar" MaxLength="100" />
+    <Property Name="sdt" Type="int" />
+    <Property Name="diachi" Type="nvarchar" MaxLength="1000" />
+    <Property Name="ngaydathang" Type="nvarchar" MaxLength="10" />
+    <Property Name="tongtien" Type="int" />
+    <Property Name="trangthai" Type="int" />
+  </EntityType>
+  <EntityType Name="LoaiSanPham">
+    <Key>
+      <PropertyRef Name="idsanpham" />
+    </Key>
+    <Property Name="idsanpham" Type="int" Nullable="false" />
+    <Property Name="tenloai" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="LoaiTaiKhoan">
+    <Key>
+      <PropertyRef Name="maloaitk" />
+    </Key>
+    <Property Name="maloaitk" Type="int" Nullable="false" />
+    <Property Name="tenloaitaikhoan" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="sanpham">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tensp" Type="nvarchar" MaxLength="1000" />
+    <Property Name="gia" Type="int" />
+    <Property Name="hinhanhsp" Type="varchar" MaxLength="1000" />
+    <Property Name="soluong" Type="int" />
+    <Property Name="mota" Type="nvarchar" MaxLength="4000" />
+    <Property Name="idsanpham" Type="int" />
+  </EntityType>
+  <EntityType Name="thanhvien">
+    <Key>
+      <PropertyRef Name="matv" />
+    </Key>
+    <Property Name="matv" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tentv" Type="nvarchar" MaxLength="100" />
+    <Property Name="tendangnhap" Type="nvarchar" MaxLength="100" />
+    <Property Name="matkhau" Type="nvarchar" MaxLength="100" />
+    <Property Name="diachi" Type="nvarchar" MaxLength="1000" />
+    <Property Name="sdt" Type="varchar" MaxLength="10" />
+    <Property Name="maloaitk" Type="int" />
+  </EntityType>
+  <Function Name="get_allhoadon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="get_dangky" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tentv" Type="nvarchar" Mode="In" />
+    <Parameter Name="tendangnhap" Type="nvarchar" Mode="In" />
+    <Parameter Name="matkhau" Type="nvarchar" Mode="In" />
+    <Parameter Name="diachi" Type="nvarchar" Mode="In" />
+    <Parameter Name="sdt" Type="varchar" Mode="In" />
+    <Parameter Name="maloaitk" Type="int" Mode="In" />
+  </Function>
+  <Function Name="get_hanghet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="get_hoadonAdmin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="trangthai" Type="int" Mode="In" />
+  </Function>
+  <Function Name="get_hoadonUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="trangthai" Type="int" Mode="In" />
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="get_user" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="taikhoan" Type="nvarchar" Mode="In" />
+    <Parameter Name="matkhau" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="gethoadon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="getSP_giaMinMax" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="GiaMin" Type="int" Mode="In" />
+    <Parameter Name="GiaMax" Type="int" Mode="In" />
+  </Function>
+  <Function Name="getspbanchay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_GETMA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ma" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_GETMALoai" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="maloai" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_GETNew" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idsanpham" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_GETTEN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tensp" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_Themnew" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tensp" Type="nvarchar" Mode="In" />
+    <Parameter Name="gia" Type="int" Mode="In" />
+    <Parameter Name="hinhanhsp" Type="varchar" Mode="In" />
+    <Parameter Name="soluong" Type="int" Mode="In" />
+    <Parameter Name="mota" Type="nvarchar" Mode="In" />
+    <Parameter Name="idsanpham" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="tensp" Type="nvarchar" Mode="In" />
+    <Parameter Name="gia" Type="int" Mode="In" />
+    <Parameter Name="hinhanhsp" Type="varchar" Mode="In" />
+    <Parameter Name="soluong" Type="int" Mode="In" />
+    <Parameter Name="mota" Type="nvarchar" Mode="In" />
+    <Parameter Name="idsanpham" Type="int" Mode="In" />
+  </Function>
+  <Function Name="thongkenam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="year" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="thongkethang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="year" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="CuaHangModelStoreContainer">
+    <EntitySet Name="Chitietdonhang" EntityType="Self.Chitietdonhang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="donhang" EntityType="Self.donhang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoaiSanPham" EntityType="Self.LoaiSanPham" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoaiTaiKhoan" EntityType="Self.LoaiTaiKhoan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sanpham" EntityType="Self.sanpham" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="thanhvien" EntityType="Self.thanhvien" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

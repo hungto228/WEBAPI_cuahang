@@ -1,0 +1,681 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CuaHangModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Chitietdonhang">
+          <Key>
+            <PropertyRef Name="mact" />
+          </Key>
+          <Property Name="mact" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="madonhang" Type="int" />
+          <Property Name="Id" Type="int" />
+          <Property Name="tensp" Type="nvarchar" MaxLength="1000" />
+          <Property Name="soluong" Type="int" />
+          <Property Name="thanhtien" Type="int" />
+        </EntityType>
+        <EntityType Name="donhang">
+          <Key>
+            <PropertyRef Name="madonhang" />
+          </Key>
+          <Property Name="madonhang" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="matv" Type="int" />
+          <Property Name="tentv" Type="nvarchar" MaxLength="100" />
+          <Property Name="sdt" Type="int" />
+          <Property Name="diachi" Type="nvarchar" MaxLength="1000" />
+          <Property Name="ngaydathang" Type="nvarchar" MaxLength="10" />
+          <Property Name="tongtien" Type="int" />
+          <Property Name="trangthai" Type="int" />
+        </EntityType>
+        <EntityType Name="LoaiSanPham">
+          <Key>
+            <PropertyRef Name="idsanpham" />
+          </Key>
+          <Property Name="idsanpham" Type="int" Nullable="false" />
+          <Property Name="tenloai" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="LoaiTaiKhoan">
+          <Key>
+            <PropertyRef Name="maloaitk" />
+          </Key>
+          <Property Name="maloaitk" Type="int" Nullable="false" />
+          <Property Name="tenloaitaikhoan" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="sanpham">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tensp" Type="nvarchar" MaxLength="1000" />
+          <Property Name="gia" Type="int" />
+          <Property Name="hinhanhsp" Type="varchar" MaxLength="1000" />
+          <Property Name="soluong" Type="int" />
+          <Property Name="mota" Type="nvarchar" MaxLength="4000" />
+          <Property Name="idsanpham" Type="int" />
+        </EntityType>
+        <EntityType Name="thanhvien">
+          <Key>
+            <PropertyRef Name="matv" />
+          </Key>
+          <Property Name="matv" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tentv" Type="nvarchar" MaxLength="100" />
+          <Property Name="tendangnhap" Type="nvarchar" MaxLength="100" />
+          <Property Name="matkhau" Type="nvarchar" MaxLength="100" />
+          <Property Name="diachi" Type="nvarchar" MaxLength="1000" />
+          <Property Name="sdt" Type="varchar" MaxLength="10" />
+          <Property Name="maloaitk" Type="int" />
+        </EntityType>
+        <Function Name="get_allhoadon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="get_dangky" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tentv" Type="nvarchar" Mode="In" />
+          <Parameter Name="tendangnhap" Type="nvarchar" Mode="In" />
+          <Parameter Name="matkhau" Type="nvarchar" Mode="In" />
+          <Parameter Name="diachi" Type="nvarchar" Mode="In" />
+          <Parameter Name="sdt" Type="varchar" Mode="In" />
+          <Parameter Name="maloaitk" Type="int" Mode="In" />
+        </Function>
+        <Function Name="get_hanghet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="get_hoadonAdmin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="trangthai" Type="int" Mode="In" />
+        </Function>
+        <Function Name="get_hoadonUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="trangthai" Type="int" Mode="In" />
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="get_user" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="taikhoan" Type="nvarchar" Mode="In" />
+          <Parameter Name="matkhau" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="gethoadon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="getSP_giaMinMax" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="GiaMin" Type="int" Mode="In" />
+          <Parameter Name="GiaMax" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getspbanchay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_GETMA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ma" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SP_GETMALoai" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="maloai" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SP_GETNew" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idsanpham" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SP_GETTEN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tensp" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SP_Themnew" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tensp" Type="nvarchar" Mode="In" />
+          <Parameter Name="gia" Type="int" Mode="In" />
+          <Parameter Name="hinhanhsp" Type="varchar" Mode="In" />
+          <Parameter Name="soluong" Type="int" Mode="In" />
+          <Parameter Name="mota" Type="nvarchar" Mode="In" />
+          <Parameter Name="idsanpham" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="tensp" Type="nvarchar" Mode="In" />
+          <Parameter Name="gia" Type="int" Mode="In" />
+          <Parameter Name="hinhanhsp" Type="varchar" Mode="In" />
+          <Parameter Name="soluong" Type="int" Mode="In" />
+          <Parameter Name="mota" Type="nvarchar" Mode="In" />
+          <Parameter Name="idsanpham" Type="int" Mode="In" />
+        </Function>
+        <Function Name="thongkenam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="year" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="thongkethang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="year" Type="nvarchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="CuaHangModelStoreContainer">
+          <EntitySet Name="Chitietdonhang" EntityType="Self.Chitietdonhang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="donhang" EntityType="Self.donhang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoaiSanPham" EntityType="Self.LoaiSanPham" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoaiTaiKhoan" EntityType="Self.LoaiTaiKhoan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sanpham" EntityType="Self.sanpham" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="thanhvien" EntityType="Self.thanhvien" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CuaHangModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Chitietdonhang">
+          <Key>
+            <PropertyRef Name="mact" />
+          </Key>
+          <Property Name="mact" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="madonhang" Type="Int32" />
+          <Property Name="Id" Type="Int32" />
+          <Property Name="tensp" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="soluong" Type="Int32" />
+          <Property Name="thanhtien" Type="Int32" />
+        </EntityType>
+        <EntityType Name="donhang">
+          <Key>
+            <PropertyRef Name="madonhang" />
+          </Key>
+          <Property Name="madonhang" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="matv" Type="Int32" />
+          <Property Name="tentv" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="sdt" Type="Int32" />
+          <Property Name="diachi" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="ngaydathang" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="tongtien" Type="Int32" />
+          <Property Name="trangthai" Type="Int32" />
+        </EntityType>
+        <EntityType Name="LoaiSanPham">
+          <Key>
+            <PropertyRef Name="idsanpham" />
+          </Key>
+          <Property Name="idsanpham" Type="Int32" Nullable="false" />
+          <Property Name="tenloai" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LoaiTaiKhoan">
+          <Key>
+            <PropertyRef Name="maloaitk" />
+          </Key>
+          <Property Name="maloaitk" Type="Int32" Nullable="false" />
+          <Property Name="tenloaitaikhoan" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="sanpham">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tensp" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="gia" Type="Int32" />
+          <Property Name="hinhanhsp" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="soluong" Type="Int32" />
+          <Property Name="mota" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="idsanpham" Type="Int32" />
+        </EntityType>
+        <EntityType Name="thanhvien">
+          <Key>
+            <PropertyRef Name="matv" />
+          </Key>
+          <Property Name="matv" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tentv" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="tendangnhap" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="matkhau" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="diachi" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="sdt" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="maloaitk" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="CuaHangEntities4" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Chitietdonhangs" EntityType="Self.Chitietdonhang" />
+          <EntitySet Name="donhangs" EntityType="Self.donhang" />
+          <EntitySet Name="LoaiSanPhams" EntityType="Self.LoaiSanPham" />
+          <EntitySet Name="LoaiTaiKhoans" EntityType="Self.LoaiTaiKhoan" />
+          <EntitySet Name="sanphams" EntityType="Self.sanpham" />
+          <EntitySet Name="thanhviens" EntityType="Self.thanhvien" />
+          <FunctionImport Name="get_allhoadon" ReturnType="Collection(CuaHangModel.get_allhoadon_Result)" />
+          <FunctionImport Name="get_dangky">
+            <Parameter Name="tentv" Mode="In" Type="String" />
+            <Parameter Name="tendangnhap" Mode="In" Type="String" />
+            <Parameter Name="matkhau" Mode="In" Type="String" />
+            <Parameter Name="diachi" Mode="In" Type="String" />
+            <Parameter Name="sdt" Mode="In" Type="String" />
+            <Parameter Name="maloaitk" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="get_hanghet" ReturnType="Collection(CuaHangModel.get_hanghet_Result)" />
+          <FunctionImport Name="get_hoadonAdmin" ReturnType="Collection(CuaHangModel.get_hoadonAdmin_Result)">
+            <Parameter Name="trangthai" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="get_hoadonUser" ReturnType="Collection(CuaHangModel.get_hoadonUser_Result)">
+            <Parameter Name="trangthai" Mode="In" Type="Int32" />
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="get_user" ReturnType="Collection(CuaHangModel.get_user_Result)">
+            <Parameter Name="taikhoan" Mode="In" Type="String" />
+            <Parameter Name="matkhau" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="gethoadon" ReturnType="Collection(CuaHangModel.gethoadon_Result)">
+            <Parameter Name="id" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="getSP_giaMinMax" ReturnType="Collection(CuaHangModel.getSP_giaMinMax_Result)">
+            <Parameter Name="GiaMin" Mode="In" Type="Int32" />
+            <Parameter Name="GiaMax" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getspbanchay" ReturnType="Collection(CuaHangModel.getspbanchay_Result)" />
+          <FunctionImport Name="SP_GETMA" ReturnType="Collection(CuaHangModel.SP_GETMA_Result)">
+            <Parameter Name="ma" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_GETMALoai" ReturnType="Collection(CuaHangModel.SP_GETMALoai_Result)">
+            <Parameter Name="maloai" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_GETNew" ReturnType="Collection(CuaHangModel.SP_GETNew_Result)">
+            <Parameter Name="idsanpham" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_GETTEN" ReturnType="Collection(CuaHangModel.SP_GETTEN_Result)">
+            <Parameter Name="tensp" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Themnew">
+            <Parameter Name="tensp" Mode="In" Type="String" />
+            <Parameter Name="gia" Mode="In" Type="Int32" />
+            <Parameter Name="hinhanhsp" Mode="In" Type="String" />
+            <Parameter Name="soluong" Mode="In" Type="Int32" />
+            <Parameter Name="mota" Mode="In" Type="String" />
+            <Parameter Name="idsanpham" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_update">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="tensp" Mode="In" Type="String" />
+            <Parameter Name="gia" Mode="In" Type="Int32" />
+            <Parameter Name="hinhanhsp" Mode="In" Type="String" />
+            <Parameter Name="soluong" Mode="In" Type="Int32" />
+            <Parameter Name="mota" Mode="In" Type="String" />
+            <Parameter Name="idsanpham" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="thongkenam" ReturnType="Collection(CuaHangModel.thongkenam_Result)">
+            <Parameter Name="year" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="thongkethang" ReturnType="Collection(CuaHangModel.thongkethang_Result)">
+            <Parameter Name="year" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="get_allhoadon_Result">
+          <Property Type="Int32" Name="madonhang" Nullable="false" />
+          <Property Type="Int32" Name="matv" Nullable="true" />
+          <Property Type="String" Name="tentv" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="sdt" Nullable="true" />
+          <Property Type="String" Name="diachi" Nullable="true" MaxLength="1000" />
+          <Property Type="String" Name="ngaydathang" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="tongtien" Nullable="true" />
+          <Property Type="Int32" Name="trangthai" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="get_hanghet_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="tensp" Nullable="true" MaxLength="1000" />
+          <Property Type="Int32" Name="gia" Nullable="true" />
+          <Property Type="String" Name="hinhanhsp" Nullable="true" MaxLength="1000" />
+          <Property Type="Int32" Name="soluong" Nullable="true" />
+          <Property Type="String" Name="mota" Nullable="true" MaxLength="4000" />
+          <Property Type="Int32" Name="idsanpham" Nullable="true" />
+          <Property Type="Int32" Name="Column1" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="get_hoadonAdmin_Result">
+          <Property Type="Int32" Name="madonhang" Nullable="false" />
+          <Property Type="Int32" Name="matv" Nullable="true" />
+          <Property Type="String" Name="tentv" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="sdt" Nullable="true" />
+          <Property Type="String" Name="diachi" Nullable="true" MaxLength="1000" />
+          <Property Type="String" Name="ngaydathang" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="tongtien" Nullable="true" />
+          <Property Type="Int32" Name="trangthai" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="get_hoadonUser_Result">
+          <Property Type="Int32" Name="madonhang" Nullable="false" />
+          <Property Type="Int32" Name="matv" Nullable="true" />
+          <Property Type="String" Name="tentv" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="sdt" Nullable="true" />
+          <Property Type="String" Name="diachi" Nullable="true" MaxLength="1000" />
+          <Property Type="String" Name="ngaydathang" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="tongtien" Nullable="true" />
+          <Property Type="Int32" Name="trangthai" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="get_user_Result">
+          <Property Type="Int32" Name="matv" Nullable="false" />
+          <Property Type="String" Name="tentv" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="tendangnhap" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="matkhau" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="diachi" Nullable="true" MaxLength="1000" />
+          <Property Type="String" Name="sdt" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="maloaitk" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="gethoadon_Result">
+          <Property Type="Int32" Name="madonhang" Nullable="false" />
+          <Property Type="Int32" Name="matv" Nullable="true" />
+          <Property Type="String" Name="tentv" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="sdt" Nullable="true" />
+          <Property Type="String" Name="diachi" Nullable="true" MaxLength="1000" />
+          <Property Type="String" Name="ngaydathang" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="tongtien" Nullable="true" />
+          <Property Type="Int32" Name="trangthai" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="getSP_giaMinMax_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="tensp" Nullable="true" MaxLength="1000" />
+          <Property Type="Int32" Name="gia" Nullable="true" />
+          <Property Type="String" Name="hinhanhsp" Nullable="true" MaxLength="1000" />
+          <Property Type="Int32" Name="soluong" Nullable="true" />
+          <Property Type="String" Name="mota" Nullable="true" MaxLength="4000" />
+          <Property Type="Int32" Name="idsanpham" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="getspbanchay_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="tensp" Nullable="true" MaxLength="1000" />
+          <Property Type="Int32" Name="gia" Nullable="true" />
+          <Property Type="String" Name="hinhanhsp" Nullable="true" MaxLength="1000" />
+          <Property Type="Int32" Name="soluong" Nullable="true" />
+          <Property Type="String" Name="mota" Nullable="true" MaxLength="4000" />
+          <Property Type="Int32" Name="idsanpham" Nullable="true" />
+          <Property Type="Int32" Name="soluong1" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_GETMA_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="tensp" Nullable="true" MaxLength="1000" />
+          <Property Type="Int32" Name="gia" Nullable="true" />
+          <Property Type="String" Name="hinhanhsp" Nullable="true" MaxLength="1000" />
+          <Property Type="Int32" Name="soluong" Nullable="true" />
+          <Property Type="String" Name="mota" Nullable="true" MaxLength="4000" />
+          <Property Type="Int32" Name="idsanpham" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_GETMALoai_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="tensp" Nullable="true" MaxLength="1000" />
+          <Property Type="Int32" Name="gia" Nullable="true" />
+          <Property Type="String" Name="hinhanhsp" Nullable="true" MaxLength="1000" />
+          <Property Type="Int32" Name="soluong" Nullable="true" />
+          <Property Type="String" Name="mota" Nullable="true" MaxLength="4000" />
+          <Property Type="Int32" Name="idsanpham" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_GETNew_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="tensp" Nullable="true" MaxLength="1000" />
+          <Property Type="Int32" Name="gia" Nullable="true" />
+          <Property Type="String" Name="hinhanhsp" Nullable="true" MaxLength="1000" />
+          <Property Type="Int32" Name="soluong" Nullable="true" />
+          <Property Type="String" Name="mota" Nullable="true" MaxLength="4000" />
+          <Property Type="Int32" Name="idsanpham" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_GETTEN_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="tensp" Nullable="true" MaxLength="1000" />
+          <Property Type="Int32" Name="gia" Nullable="true" />
+          <Property Type="String" Name="hinhanhsp" Nullable="true" MaxLength="1000" />
+          <Property Type="Int32" Name="soluong" Nullable="true" />
+          <Property Type="String" Name="mota" Nullable="true" MaxLength="4000" />
+          <Property Type="Int32" Name="idsanpham" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="thongkenam_Result">
+          <Property Type="Int32" Name="thoigian" Nullable="true" />
+          <Property Type="Int32" Name="tongtien" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="thongkethang_Result">
+          <Property Type="Int32" Name="thoigian" Nullable="true" />
+          <Property Type="Int32" Name="tongtien" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CuaHangModelStoreContainer" CdmEntityContainer="CuaHangEntities4">
+          <EntitySetMapping Name="Chitietdonhangs">
+            <EntityTypeMapping TypeName="CuaHangModel.Chitietdonhang">
+              <MappingFragment StoreEntitySet="Chitietdonhang">
+                <ScalarProperty Name="mact" ColumnName="mact" />
+                <ScalarProperty Name="madonhang" ColumnName="madonhang" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="tensp" ColumnName="tensp" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="thanhtien" ColumnName="thanhtien" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="donhangs">
+            <EntityTypeMapping TypeName="CuaHangModel.donhang">
+              <MappingFragment StoreEntitySet="donhang">
+                <ScalarProperty Name="madonhang" ColumnName="madonhang" />
+                <ScalarProperty Name="matv" ColumnName="matv" />
+                <ScalarProperty Name="tentv" ColumnName="tentv" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="ngaydathang" ColumnName="ngaydathang" />
+                <ScalarProperty Name="tongtien" ColumnName="tongtien" />
+                <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoaiSanPhams">
+            <EntityTypeMapping TypeName="CuaHangModel.LoaiSanPham">
+              <MappingFragment StoreEntitySet="LoaiSanPham">
+                <ScalarProperty Name="idsanpham" ColumnName="idsanpham" />
+                <ScalarProperty Name="tenloai" ColumnName="tenloai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoaiTaiKhoans">
+            <EntityTypeMapping TypeName="CuaHangModel.LoaiTaiKhoan">
+              <MappingFragment StoreEntitySet="LoaiTaiKhoan">
+                <ScalarProperty Name="maloaitk" ColumnName="maloaitk" />
+                <ScalarProperty Name="tenloaitaikhoan" ColumnName="tenloaitaikhoan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sanphams">
+            <EntityTypeMapping TypeName="CuaHangModel.sanpham">
+              <MappingFragment StoreEntitySet="sanpham">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="tensp" ColumnName="tensp" />
+                <ScalarProperty Name="gia" ColumnName="gia" />
+                <ScalarProperty Name="hinhanhsp" ColumnName="hinhanhsp" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="mota" ColumnName="mota" />
+                <ScalarProperty Name="idsanpham" ColumnName="idsanpham" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="thanhviens">
+            <EntityTypeMapping TypeName="CuaHangModel.thanhvien">
+              <MappingFragment StoreEntitySet="thanhvien">
+                <ScalarProperty Name="matv" ColumnName="matv" />
+                <ScalarProperty Name="tentv" ColumnName="tentv" />
+                <ScalarProperty Name="tendangnhap" ColumnName="tendangnhap" />
+                <ScalarProperty Name="matkhau" ColumnName="matkhau" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+                <ScalarProperty Name="maloaitk" ColumnName="maloaitk" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="get_allhoadon" FunctionName="CuaHangModel.Store.get_allhoadon">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CuaHangModel.get_allhoadon_Result">
+                <ScalarProperty Name="madonhang" ColumnName="madonhang" />
+                <ScalarProperty Name="matv" ColumnName="matv" />
+                <ScalarProperty Name="tentv" ColumnName="tentv" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="ngaydathang" ColumnName="ngaydathang" />
+                <ScalarProperty Name="tongtien" ColumnName="tongtien" />
+                <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="get_dangky" FunctionName="CuaHangModel.Store.get_dangky" />
+          <FunctionImportMapping FunctionImportName="get_hanghet" FunctionName="CuaHangModel.Store.get_hanghet">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CuaHangModel.get_hanghet_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="tensp" ColumnName="tensp" />
+                <ScalarProperty Name="gia" ColumnName="gia" />
+                <ScalarProperty Name="hinhanhsp" ColumnName="hinhanhsp" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="mota" ColumnName="mota" />
+                <ScalarProperty Name="idsanpham" ColumnName="idsanpham" />
+                <ScalarProperty Name="Column1" ColumnName="Column1" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="get_hoadonAdmin" FunctionName="CuaHangModel.Store.get_hoadonAdmin">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CuaHangModel.get_hoadonAdmin_Result">
+                <ScalarProperty Name="madonhang" ColumnName="madonhang" />
+                <ScalarProperty Name="matv" ColumnName="matv" />
+                <ScalarProperty Name="tentv" ColumnName="tentv" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="ngaydathang" ColumnName="ngaydathang" />
+                <ScalarProperty Name="tongtien" ColumnName="tongtien" />
+                <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="get_hoadonUser" FunctionName="CuaHangModel.Store.get_hoadonUser">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CuaHangModel.get_hoadonUser_Result">
+                <ScalarProperty Name="madonhang" ColumnName="madonhang" />
+                <ScalarProperty Name="matv" ColumnName="matv" />
+                <ScalarProperty Name="tentv" ColumnName="tentv" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="ngaydathang" ColumnName="ngaydathang" />
+                <ScalarProperty Name="tongtien" ColumnName="tongtien" />
+                <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="get_user" FunctionName="CuaHangModel.Store.get_user">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CuaHangModel.get_user_Result">
+                <ScalarProperty Name="matv" ColumnName="matv" />
+                <ScalarProperty Name="tentv" ColumnName="tentv" />
+                <ScalarProperty Name="tendangnhap" ColumnName="tendangnhap" />
+                <ScalarProperty Name="matkhau" ColumnName="matkhau" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+                <ScalarProperty Name="maloaitk" ColumnName="maloaitk" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="gethoadon" FunctionName="CuaHangModel.Store.gethoadon">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CuaHangModel.gethoadon_Result">
+                <ScalarProperty Name="madonhang" ColumnName="madonhang" />
+                <ScalarProperty Name="matv" ColumnName="matv" />
+                <ScalarProperty Name="tentv" ColumnName="tentv" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="ngaydathang" ColumnName="ngaydathang" />
+                <ScalarProperty Name="tongtien" ColumnName="tongtien" />
+                <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getSP_giaMinMax" FunctionName="CuaHangModel.Store.getSP_giaMinMax">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CuaHangModel.getSP_giaMinMax_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="tensp" ColumnName="tensp" />
+                <ScalarProperty Name="gia" ColumnName="gia" />
+                <ScalarProperty Name="hinhanhsp" ColumnName="hinhanhsp" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="mota" ColumnName="mota" />
+                <ScalarProperty Name="idsanpham" ColumnName="idsanpham" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getspbanchay" FunctionName="CuaHangModel.Store.getspbanchay">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CuaHangModel.getspbanchay_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="tensp" ColumnName="tensp" />
+                <ScalarProperty Name="gia" ColumnName="gia" />
+                <ScalarProperty Name="hinhanhsp" ColumnName="hinhanhsp" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="mota" ColumnName="mota" />
+                <ScalarProperty Name="idsanpham" ColumnName="idsanpham" />
+                <ScalarProperty Name="soluong1" ColumnName="soluong1" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_GETMA" FunctionName="CuaHangModel.Store.SP_GETMA">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CuaHangModel.SP_GETMA_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="tensp" ColumnName="tensp" />
+                <ScalarProperty Name="gia" ColumnName="gia" />
+                <ScalarProperty Name="hinhanhsp" ColumnName="hinhanhsp" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="mota" ColumnName="mota" />
+                <ScalarProperty Name="idsanpham" ColumnName="idsanpham" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_GETMALoai" FunctionName="CuaHangModel.Store.SP_GETMALoai">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CuaHangModel.SP_GETMALoai_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="tensp" ColumnName="tensp" />
+                <ScalarProperty Name="gia" ColumnName="gia" />
+                <ScalarProperty Name="hinhanhsp" ColumnName="hinhanhsp" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="mota" ColumnName="mota" />
+                <ScalarProperty Name="idsanpham" ColumnName="idsanpham" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_GETNew" FunctionName="CuaHangModel.Store.SP_GETNew">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CuaHangModel.SP_GETNew_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="tensp" ColumnName="tensp" />
+                <ScalarProperty Name="gia" ColumnName="gia" />
+                <ScalarProperty Name="hinhanhsp" ColumnName="hinhanhsp" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="mota" ColumnName="mota" />
+                <ScalarProperty Name="idsanpham" ColumnName="idsanpham" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_GETTEN" FunctionName="CuaHangModel.Store.SP_GETTEN">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CuaHangModel.SP_GETTEN_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="tensp" ColumnName="tensp" />
+                <ScalarProperty Name="gia" ColumnName="gia" />
+                <ScalarProperty Name="hinhanhsp" ColumnName="hinhanhsp" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="mota" ColumnName="mota" />
+                <ScalarProperty Name="idsanpham" ColumnName="idsanpham" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Themnew" FunctionName="CuaHangModel.Store.SP_Themnew" />
+          <FunctionImportMapping FunctionImportName="SP_update" FunctionName="CuaHangModel.Store.SP_update" />
+          <FunctionImportMapping FunctionImportName="thongkenam" FunctionName="CuaHangModel.Store.thongkenam">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CuaHangModel.thongkenam_Result">
+                <ScalarProperty Name="thoigian" ColumnName="thoigian" />
+                <ScalarProperty Name="tongtien" ColumnName="tongtien" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="thongkethang" FunctionName="CuaHangModel.Store.thongkethang">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CuaHangModel.thongkethang_Result">
+                <ScalarProperty Name="thoigian" ColumnName="thoigian" />
+                <ScalarProperty Name="tongtien" ColumnName="tongtien" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

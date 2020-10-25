@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CuaHangModelStoreContainer" CdmEntityContainer="CuaHangEntities4">
+    <EntitySetMapping Name="Chitietdonhangs">
+      <EntityTypeMapping TypeName="CuaHangModel.Chitietdonhang">
+        <MappingFragment StoreEntitySet="Chitietdonhang">
+          <ScalarProperty Name="mact" ColumnName="mact" />
+          <ScalarProperty Name="madonhang" ColumnName="madonhang" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="tensp" ColumnName="tensp" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="thanhtien" ColumnName="thanhtien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="donhangs">
+      <EntityTypeMapping TypeName="CuaHangModel.donhang">
+        <MappingFragment StoreEntitySet="donhang">
+          <ScalarProperty Name="madonhang" ColumnName="madonhang" />
+          <ScalarProperty Name="matv" ColumnName="matv" />
+          <ScalarProperty Name="tentv" ColumnName="tentv" />
+          <ScalarProperty Name="sdt" ColumnName="sdt" />
+          <ScalarProperty Name="diachi" ColumnName="diachi" />
+          <ScalarProperty Name="ngaydathang" ColumnName="ngaydathang" />
+          <ScalarProperty Name="tongtien" ColumnName="tongtien" />
+          <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoaiSanPhams">
+      <EntityTypeMapping TypeName="CuaHangModel.LoaiSanPham">
+        <MappingFragment StoreEntitySet="LoaiSanPham">
+          <ScalarProperty Name="idsanpham" ColumnName="idsanpham" />
+          <ScalarProperty Name="tenloai" ColumnName="tenloai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoaiTaiKhoans">
+      <EntityTypeMapping TypeName="CuaHangModel.LoaiTaiKhoan">
+        <MappingFragment StoreEntitySet="LoaiTaiKhoan">
+          <ScalarProperty Name="maloaitk" ColumnName="maloaitk" />
+          <ScalarProperty Name="tenloaitaikhoan" ColumnName="tenloaitaikhoan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sanphams">
+      <EntityTypeMapping TypeName="CuaHangModel.sanpham">
+        <MappingFragment StoreEntitySet="sanpham">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="tensp" ColumnName="tensp" />
+          <ScalarProperty Name="gia" ColumnName="gia" />
+          <ScalarProperty Name="hinhanhsp" ColumnName="hinhanhsp" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="mota" ColumnName="mota" />
+          <ScalarProperty Name="idsanpham" ColumnName="idsanpham" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="thanhviens">
+      <EntityTypeMapping TypeName="CuaHangModel.thanhvien">
+        <MappingFragment StoreEntitySet="thanhvien">
+          <ScalarProperty Name="matv" ColumnName="matv" />
+          <ScalarProperty Name="tentv" ColumnName="tentv" />
+          <ScalarProperty Name="tendangnhap" ColumnName="tendangnhap" />
+          <ScalarProperty Name="matkhau" ColumnName="matkhau" />
+          <ScalarProperty Name="diachi" ColumnName="diachi" />
+          <ScalarProperty Name="sdt" ColumnName="sdt" />
+          <ScalarProperty Name="maloaitk" ColumnName="maloaitk" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="get_allhoadon" FunctionName="CuaHangModel.Store.get_allhoadon">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CuaHangModel.get_allhoadon_Result">
+          <ScalarProperty Name="madonhang" ColumnName="madonhang" />
+          <ScalarProperty Name="matv" ColumnName="matv" />
+          <ScalarProperty Name="tentv" ColumnName="tentv" />
+          <ScalarProperty Name="sdt" ColumnName="sdt" />
+          <ScalarProperty Name="diachi" ColumnName="diachi" />
+          <ScalarProperty Name="ngaydathang" ColumnName="ngaydathang" />
+          <ScalarProperty Name="tongtien" ColumnName="tongtien" />
+          <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="get_dangky" FunctionName="CuaHangModel.Store.get_dangky" />
+    <FunctionImportMapping FunctionImportName="get_hanghet" FunctionName="CuaHangModel.Store.get_hanghet">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CuaHangModel.get_hanghet_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="tensp" ColumnName="tensp" />
+          <ScalarProperty Name="gia" ColumnName="gia" />
+          <ScalarProperty Name="hinhanhsp" ColumnName="hinhanhsp" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="mota" ColumnName="mota" />
+          <ScalarProperty Name="idsanpham" ColumnName="idsanpham" />
+          <ScalarProperty Name="Column1" ColumnName="Column1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="get_hoadonAdmin" FunctionName="CuaHangModel.Store.get_hoadonAdmin">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CuaHangModel.get_hoadonAdmin_Result">
+          <ScalarProperty Name="madonhang" ColumnName="madonhang" />
+          <ScalarProperty Name="matv" ColumnName="matv" />
+          <ScalarProperty Name="tentv" ColumnName="tentv" />
+          <ScalarProperty Name="sdt" ColumnName="sdt" />
+          <ScalarProperty Name="diachi" ColumnName="diachi" />
+          <ScalarProperty Name="ngaydathang" ColumnName="ngaydathang" />
+          <ScalarProperty Name="tongtien" ColumnName="tongtien" />
+          <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="get_hoadonUser" FunctionName="CuaHangModel.Store.get_hoadonUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CuaHangModel.get_hoadonUser_Result">
+          <ScalarProperty Name="madonhang" ColumnName="madonhang" />
+          <ScalarProperty Name="matv" ColumnName="matv" />
+          <ScalarProperty Name="tentv" ColumnName="tentv" />
+          <ScalarProperty Name="sdt" ColumnName="sdt" />
+          <ScalarProperty Name="diachi" ColumnName="diachi" />
+          <ScalarProperty Name="ngaydathang" ColumnName="ngaydathang" />
+          <ScalarProperty Name="tongtien" ColumnName="tongtien" />
+          <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="get_user" FunctionName="CuaHangModel.Store.get_user">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CuaHangModel.get_user_Result">
+          <ScalarProperty Name="matv" ColumnName="matv" />
+          <ScalarProperty Name="tentv" ColumnName="tentv" />
+          <ScalarProperty Name="tendangnhap" ColumnName="tendangnhap" />
+          <ScalarProperty Name="matkhau" ColumnName="matkhau" />
+          <ScalarProperty Name="diachi" ColumnName="diachi" />
+          <ScalarProperty Name="sdt" ColumnName="sdt" />
+          <ScalarProperty Name="maloaitk" ColumnName="maloaitk" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="gethoadon" FunctionName="CuaHangModel.Store.gethoadon">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CuaHangModel.gethoadon_Result">
+          <ScalarProperty Name="madonhang" ColumnName="madonhang" />
+          <ScalarProperty Name="matv" ColumnName="matv" />
+          <ScalarProperty Name="tentv" ColumnName="tentv" />
+          <ScalarProperty Name="sdt" ColumnName="sdt" />
+          <ScalarProperty Name="diachi" ColumnName="diachi" />
+          <ScalarProperty Name="ngaydathang" ColumnName="ngaydathang" />
+          <ScalarProperty Name="tongtien" ColumnName="tongtien" />
+          <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getSP_giaMinMax" FunctionName="CuaHangModel.Store.getSP_giaMinMax">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CuaHangModel.getSP_giaMinMax_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="tensp" ColumnName="tensp" />
+          <ScalarProperty Name="gia" ColumnName="gia" />
+          <ScalarProperty Name="hinhanhsp" ColumnName="hinhanhsp" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="mota" ColumnName="mota" />
+          <ScalarProperty Name="idsanpham" ColumnName="idsanpham" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="getspbanchay" FunctionName="CuaHangModel.Store.getspbanchay">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CuaHangModel.getspbanchay_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="tensp" ColumnName="tensp" />
+          <ScalarProperty Name="gia" ColumnName="gia" />
+          <ScalarProperty Name="hinhanhsp" ColumnName="hinhanhsp" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="mota" ColumnName="mota" />
+          <ScalarProperty Name="idsanpham" ColumnName="idsanpham" />
+          <ScalarProperty Name="soluong1" ColumnName="soluong1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GETMA" FunctionName="CuaHangModel.Store.SP_GETMA">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CuaHangModel.SP_GETMA_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="tensp" ColumnName="tensp" />
+          <ScalarProperty Name="gia" ColumnName="gia" />
+          <ScalarProperty Name="hinhanhsp" ColumnName="hinhanhsp" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="mota" ColumnName="mota" />
+          <ScalarProperty Name="idsanpham" ColumnName="idsanpham" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GETMALoai" FunctionName="CuaHangModel.Store.SP_GETMALoai">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CuaHangModel.SP_GETMALoai_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="tensp" ColumnName="tensp" />
+          <ScalarProperty Name="gia" ColumnName="gia" />
+          <ScalarProperty Name="hinhanhsp" ColumnName="hinhanhsp" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="mota" ColumnName="mota" />
+          <ScalarProperty Name="idsanpham" ColumnName="idsanpham" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GETNew" FunctionName="CuaHangModel.Store.SP_GETNew">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CuaHangModel.SP_GETNew_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="tensp" ColumnName="tensp" />
+          <ScalarProperty Name="gia" ColumnName="gia" />
+          <ScalarProperty Name="hinhanhsp" ColumnName="hinhanhsp" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="mota" ColumnName="mota" />
+          <ScalarProperty Name="idsanpham" ColumnName="idsanpham" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GETTEN" FunctionName="CuaHangModel.Store.SP_GETTEN">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CuaHangModel.SP_GETTEN_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="tensp" ColumnName="tensp" />
+          <ScalarProperty Name="gia" ColumnName="gia" />
+          <ScalarProperty Name="hinhanhsp" ColumnName="hinhanhsp" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="mota" ColumnName="mota" />
+          <ScalarProperty Name="idsanpham" ColumnName="idsanpham" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_Themnew" FunctionName="CuaHangModel.Store.SP_Themnew" />
+    <FunctionImportMapping FunctionImportName="SP_update" FunctionName="CuaHangModel.Store.SP_update" />
+    <FunctionImportMapping FunctionImportName="thongkenam" FunctionName="CuaHangModel.Store.thongkenam">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CuaHangModel.thongkenam_Result">
+          <ScalarProperty Name="thoigian" ColumnName="thoigian" />
+          <ScalarProperty Name="tongtien" ColumnName="tongtien" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="thongkethang" FunctionName="CuaHangModel.Store.thongkethang">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CuaHangModel.thongkethang_Result">
+          <ScalarProperty Name="thoigian" ColumnName="thoigian" />
+          <ScalarProperty Name="tongtien" ColumnName="tongtien" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

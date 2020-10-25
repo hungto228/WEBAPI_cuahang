@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CuaHangModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Chitietdonhang">
+    <Key>
+      <PropertyRef Name="mact" />
+    </Key>
+    <Property Name="mact" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="madonhang" Type="Int32" />
+    <Property Name="Id" Type="Int32" />
+    <Property Name="tensp" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="soluong" Type="Int32" />
+    <Property Name="thanhtien" Type="Int32" />
+  </EntityType>
+  <EntityType Name="donhang">
+    <Key>
+      <PropertyRef Name="madonhang" />
+    </Key>
+    <Property Name="madonhang" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="matv" Type="Int32" />
+    <Property Name="tentv" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="sdt" Type="Int32" />
+    <Property Name="diachi" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="ngaydathang" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="tongtien" Type="Int32" />
+    <Property Name="trangthai" Type="Int32" />
+  </EntityType>
+  <EntityType Name="LoaiSanPham">
+    <Key>
+      <PropertyRef Name="idsanpham" />
+    </Key>
+    <Property Name="idsanpham" Type="Int32" Nullable="false" />
+    <Property Name="tenloai" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="LoaiTaiKhoan">
+    <Key>
+      <PropertyRef Name="maloaitk" />
+    </Key>
+    <Property Name="maloaitk" Type="Int32" Nullable="false" />
+    <Property Name="tenloaitaikhoan" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sanpham">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tensp" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="gia" Type="Int32" />
+    <Property Name="hinhanhsp" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="soluong" Type="Int32" />
+    <Property Name="mota" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="idsanpham" Type="Int32" />
+  </EntityType>
+  <EntityType Name="thanhvien">
+    <Key>
+      <PropertyRef Name="matv" />
+    </Key>
+    <Property Name="matv" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tentv" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="tendangnhap" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="matkhau" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="diachi" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="sdt" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="maloaitk" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="CuaHangEntities4" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Chitietdonhangs" EntityType="Self.Chitietdonhang" />
+    <EntitySet Name="donhangs" EntityType="Self.donhang" />
+    <EntitySet Name="LoaiSanPhams" EntityType="Self.LoaiSanPham" />
+    <EntitySet Name="LoaiTaiKhoans" EntityType="Self.LoaiTaiKhoan" />
+    <EntitySet Name="sanphams" EntityType="Self.sanpham" />
+    <EntitySet Name="thanhviens" EntityType="Self.thanhvien" />
+    <FunctionImport Name="get_allhoadon" ReturnType="Collection(CuaHangModel.get_allhoadon_Result)" />
+    <FunctionImport Name="get_dangky">
+      <Parameter Name="tentv" Mode="In" Type="String" />
+      <Parameter Name="tendangnhap" Mode="In" Type="String" />
+      <Parameter Name="matkhau" Mode="In" Type="String" />
+      <Parameter Name="diachi" Mode="In" Type="String" />
+      <Parameter Name="sdt" Mode="In" Type="String" />
+      <Parameter Name="maloaitk" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="get_hanghet" ReturnType="Collection(CuaHangModel.get_hanghet_Result)" />
+    <FunctionImport Name="get_hoadonAdmin" ReturnType="Collection(CuaHangModel.get_hoadonAdmin_Result)">
+      <Parameter Name="trangthai" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="get_hoadonUser" ReturnType="Collection(CuaHangModel.get_hoadonUser_Result)">
+      <Parameter Name="trangthai" Mode="In" Type="Int32" />
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="get_user" ReturnType="Collection(CuaHangModel.get_user_Result)">
+      <Parameter Name="taikhoan" Mode="In" Type="String" />
+      <Parameter Name="matkhau" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="gethoadon" ReturnType="Collection(CuaHangModel.gethoadon_Result)">
+      <Parameter Name="id" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="getSP_giaMinMax" ReturnType="Collection(CuaHangModel.getSP_giaMinMax_Result)">
+      <Parameter Name="GiaMin" Mode="In" Type="Int32" />
+      <Parameter Name="GiaMax" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getspbanchay" ReturnType="Collection(CuaHangModel.getspbanchay_Result)" />
+    <FunctionImport Name="SP_GETMA" ReturnType="Collection(CuaHangModel.SP_GETMA_Result)">
+      <Parameter Name="ma" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GETMALoai" ReturnType="Collection(CuaHangModel.SP_GETMALoai_Result)">
+      <Parameter Name="maloai" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GETNew" ReturnType="Collection(CuaHangModel.SP_GETNew_Result)">
+      <Parameter Name="idsanpham" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GETTEN" ReturnType="Collection(CuaHangModel.SP_GETTEN_Result)">
+      <Parameter Name="tensp" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_Themnew">
+      <Parameter Name="tensp" Mode="In" Type="String" />
+      <Parameter Name="gia" Mode="In" Type="Int32" />
+      <Parameter Name="hinhanhsp" Mode="In" Type="String" />
+      <Parameter Name="soluong" Mode="In" Type="Int32" />
+      <Parameter Name="mota" Mode="In" Type="String" />
+      <Parameter Name="idsanpham" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_update">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="tensp" Mode="In" Type="String" />
+      <Parameter Name="gia" Mode="In" Type="Int32" />
+      <Parameter Name="hinhanhsp" Mode="In" Type="String" />
+      <Parameter Name="soluong" Mode="In" Type="Int32" />
+      <Parameter Name="mota" Mode="In" Type="String" />
+      <Parameter Name="idsanpham" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="thongkenam" ReturnType="Collection(CuaHangModel.thongkenam_Result)">
+      <Parameter Name="year" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="thongkethang" ReturnType="Collection(CuaHangModel.thongkethang_Result)">
+      <Parameter Name="year" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="get_allhoadon_Result">
+    <Property Type="Int32" Name="madonhang" Nullable="false" />
+    <Property Type="Int32" Name="matv" Nullable="true" />
+    <Property Type="String" Name="tentv" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="sdt" Nullable="true" />
+    <Property Type="String" Name="diachi" Nullable="true" MaxLength="1000" />
+    <Property Type="String" Name="ngaydathang" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="tongtien" Nullable="true" />
+    <Property Type="Int32" Name="trangthai" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="get_hanghet_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="tensp" Nullable="true" MaxLength="1000" />
+    <Property Type="Int32" Name="gia" Nullable="true" />
+    <Property Type="String" Name="hinhanhsp" Nullable="true" MaxLength="1000" />
+    <Property Type="Int32" Name="soluong" Nullable="true" />
+    <Property Type="String" Name="mota" Nullable="true" MaxLength="4000" />
+    <Property Type="Int32" Name="idsanpham" Nullable="true" />
+    <Property Type="Int32" Name="Column1" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="get_hoadonAdmin_Result">
+    <Property Type="Int32" Name="madonhang" Nullable="false" />
+    <Property Type="Int32" Name="matv" Nullable="true" />
+    <Property Type="String" Name="tentv" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="sdt" Nullable="true" />
+    <Property Type="String" Name="diachi" Nullable="true" MaxLength="1000" />
+    <Property Type="String" Name="ngaydathang" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="tongtien" Nullable="true" />
+    <Property Type="Int32" Name="trangthai" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="get_hoadonUser_Result">
+    <Property Type="Int32" Name="madonhang" Nullable="false" />
+    <Property Type="Int32" Name="matv" Nullable="true" />
+    <Property Type="String" Name="tentv" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="sdt" Nullable="true" />
+    <Property Type="String" Name="diachi" Nullable="true" MaxLength="1000" />
+    <Property Type="String" Name="ngaydathang" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="tongtien" Nullable="true" />
+    <Property Type="Int32" Name="trangthai" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="get_user_Result">
+    <Property Type="Int32" Name="matv" Nullable="false" />
+    <Property Type="String" Name="tentv" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="tendangnhap" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="matkhau" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="diachi" Nullable="true" MaxLength="1000" />
+    <Property Type="String" Name="sdt" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="maloaitk" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="gethoadon_Result">
+    <Property Type="Int32" Name="madonhang" Nullable="false" />
+    <Property Type="Int32" Name="matv" Nullable="true" />
+    <Property Type="String" Name="tentv" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="sdt" Nullable="true" />
+    <Property Type="String" Name="diachi" Nullable="true" MaxLength="1000" />
+    <Property Type="String" Name="ngaydathang" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="tongtien" Nullable="true" />
+    <Property Type="Int32" Name="trangthai" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="getSP_giaMinMax_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="tensp" Nullable="true" MaxLength="1000" />
+    <Property Type="Int32" Name="gia" Nullable="true" />
+    <Property Type="String" Name="hinhanhsp" Nullable="true" MaxLength="1000" />
+    <Property Type="Int32" Name="soluong" Nullable="true" />
+    <Property Type="String" Name="mota" Nullable="true" MaxLength="4000" />
+    <Property Type="Int32" Name="idsanpham" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="getspbanchay_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="tensp" Nullable="true" MaxLength="1000" />
+    <Property Type="Int32" Name="gia" Nullable="true" />
+    <Property Type="String" Name="hinhanhsp" Nullable="true" MaxLength="1000" />
+    <Property Type="Int32" Name="soluong" Nullable="true" />
+    <Property Type="String" Name="mota" Nullable="true" MaxLength="4000" />
+    <Property Type="Int32" Name="idsanpham" Nullable="true" />
+    <Property Type="Int32" Name="soluong1" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_GETMA_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="tensp" Nullable="true" MaxLength="1000" />
+    <Property Type="Int32" Name="gia" Nullable="true" />
+    <Property Type="String" Name="hinhanhsp" Nullable="true" MaxLength="1000" />
+    <Property Type="Int32" Name="soluong" Nullable="true" />
+    <Property Type="String" Name="mota" Nullable="true" MaxLength="4000" />
+    <Property Type="Int32" Name="idsanpham" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_GETMALoai_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="tensp" Nullable="true" MaxLength="1000" />
+    <Property Type="Int32" Name="gia" Nullable="true" />
+    <Property Type="String" Name="hinhanhsp" Nullable="true" MaxLength="1000" />
+    <Property Type="Int32" Name="soluong" Nullable="true" />
+    <Property Type="String" Name="mota" Nullable="true" MaxLength="4000" />
+    <Property Type="Int32" Name="idsanpham" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_GETNew_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="tensp" Nullable="true" MaxLength="1000" />
+    <Property Type="Int32" Name="gia" Nullable="true" />
+    <Property Type="String" Name="hinhanhsp" Nullable="true" MaxLength="1000" />
+    <Property Type="Int32" Name="soluong" Nullable="true" />
+    <Property Type="String" Name="mota" Nullable="true" MaxLength="4000" />
+    <Property Type="Int32" Name="idsanpham" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_GETTEN_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="tensp" Nullable="true" MaxLength="1000" />
+    <Property Type="Int32" Name="gia" Nullable="true" />
+    <Property Type="String" Name="hinhanhsp" Nullable="true" MaxLength="1000" />
+    <Property Type="Int32" Name="soluong" Nullable="true" />
+    <Property Type="String" Name="mota" Nullable="true" MaxLength="4000" />
+    <Property Type="Int32" Name="idsanpham" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="thongkenam_Result">
+    <Property Type="Int32" Name="thoigian" Nullable="true" />
+    <Property Type="Int32" Name="tongtien" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="thongkethang_Result">
+    <Property Type="Int32" Name="thoigian" Nullable="true" />
+    <Property Type="Int32" Name="tongtien" Nullable="true" />
+  </ComplexType>
+</Schema>
